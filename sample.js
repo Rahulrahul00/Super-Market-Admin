@@ -12,7 +12,7 @@ let db; // Placeholder for the database object after connection
 
 // Middleware to parse incoming JSON requests
 app.use(express.json());
-// Middleware to serve static files from the 'public' directory
+    // Middleware to serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Route to handle POST requests for adding an item
@@ -20,8 +20,8 @@ app.post('/add-item', async (req, res) => {
     try {
         // Extract required fields from the request body
         const { itemCode, itemName, category, qty, rate, location } = req.body;
-        
-        // Validate that all fields are present
+            
+            // Validate that all fields are present
         if (!itemCode || !itemName || !category || !qty || !rate || !location) {
             return res.status(400).json({ message: 'All fields are required.' }); // Respond with a 400 error if validation fails
         }
@@ -35,7 +35,7 @@ app.post('/add-item', async (req, res) => {
         else if (category === 'Vegetables') discountPercent = 10;
         else if (category === 'Stationary') discountPercent = 3;
 
-        // Calculate the discount and final amount
+    
         const discount = (price * discountPercent) / 100; // Calculate the discount amount
         const amount = price - discount; // Calculate the final amount after applying the discount
 

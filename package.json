@@ -1,0 +1,24 @@
+{
+  "name": "supermarket-data-base",
+  "version": "1.0.0",
+  "description": "supermarket database management CRUD system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rahulrahul00/Super-Market-Admin.git"
+  },
+  "author": "Rahul Shaji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rahulrahul00/Super-Market-Admin/issues"
+  },
+  "homepage": "https://github.com/Rahulrahul00/Super-Market-Admin#readme",
+  "dependencies": {
+    "express": "^4.21.1",
+    "mongodb": "^6.11.0",
+    "path": "^0.12.7"
+  }
+}
