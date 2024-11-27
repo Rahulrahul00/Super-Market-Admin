@@ -49,6 +49,7 @@ const addRow = (item) => {
         <td>${item.tamount}</td>
         <td>${item.location}</td>
         
+        
       </tr>`;
 
       tableBody.innerHTML += row;
