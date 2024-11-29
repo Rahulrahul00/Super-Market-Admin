@@ -20,7 +20,7 @@ let addItem = async () => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      itemCode,
+      itemCode2:itemCode,
       itemName,
       category,
       qty,
@@ -33,7 +33,8 @@ let addItem = async () => {
     const item = await response.json();
     addRow(item);
   } else {
-    alert("Error adding items");
+    // alert(messes);
+    console.log(response);
   }
 };
 

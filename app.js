@@ -15,11 +15,15 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 // console.log("dirName:",__dirname);
 
+//static for image folder
+app.use('/images', express.static('images'));
+
 // Route to handle POST requests for adding an item
 app.post("/add-item", async (req, res) => {
   try {
     // Extract required fields from the request body
     const { itemCode, itemName, category, qty, price, location } = req.body;
+    // console.log(req);
 
     // Validate that all fields are present
     if (!itemCode || !itemName || !category || !qty || !price || !location) {
@@ -61,7 +65,7 @@ app.post("/add-item", async (req, res) => {
 });
 
 // Route to handle GET requests for retrieving all items
-app.get("./items", async (res, req) => {
+app.get("/items", async (req, res) => {
   try {
     // Retrieve all documents from the 'items' collection
     const items = await db.collection("items").find().toArray();
